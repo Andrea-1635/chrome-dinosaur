@@ -1,5 +1,14 @@
 // build with "gcc main.c game.c menu.c appearance.c -lncurses -o dino.exe"
-//COMMENTO AGGIUNTO
+
+/**
+* @mainpage Main
+* @author Andrea V
+* @brief Il main lancia le funzioni necessarie al programma
+* Esegue i test se eseguito con l'argomento -test
+* @file main.c
+* @version 1.0
+*
+*/
 #include <ncurses.h>
 #include <stdio.h>
 #include "menu.h"

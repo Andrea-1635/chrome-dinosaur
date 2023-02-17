@@ -7,11 +7,16 @@
 #include "game.h"
 #include "appearance.h"
 
-
+/**
+* @mainpage Menu
+* @brief Il menu chiede i dati del giocatore
+* @file menu.c
+* @version 1.0
+*/
 void startMenu() {
 	struct user firstUser;
 	int highScore;
-    // Read high score
+    /// Read high score
 	FILE *highScoreFile;
 	highScoreFile = fopen("./highScore.txt", "r");
 	fscanf(highScoreFile, "%d", &highScore);
@@ -22,7 +27,7 @@ void startMenu() {
 	attron(COLOR_PAIR(3));
 	showTrex(maxY, maxX);
 	attroff(COLOR_PAIR(3));
-    // Get info
+    /// Get info
 	mvprintw(maxY+1, maxX-28, "Write inputs and press Enter to start Game.");
     mvprintw(maxY+2, maxX-26, "When you had prize, fire it with 'k' key!");
 	mvprintw(maxY+3, maxX-21, "You can jump with space key!");
@@ -39,7 +44,7 @@ void startMenu() {
 void endGame(int score, int highScore, int diY, int diX, struct user firstUser) {
 	nodelay(stdscr, FALSE);
 	init_pair(2,COLOR_RED,COLOR_BLACK);
-    // Save
+    /// Save
 	if (score > highScore) {
 		highScore = score;
 		FILE *highScoreFile;
@@ -54,7 +59,7 @@ void endGame(int score, int highScore, int diY, int diX, struct user firstUser) 
 	mvprintw(diY-4, diX, "          X-X ");
 	mvprintw(diY, diX, "      ||");
 	char keyToExit = getch();
-    // Exit or restart
+    /// Exit or restart
 	if (keyToExit == 'r') {
 		attroff(COLOR_PAIR(2));
 		startEngine(highScore, firstUser);
