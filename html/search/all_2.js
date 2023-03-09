@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['main_2',['Main',['../index.html',1,'']]],
-  ['main_2ec_3',['main.c',['../main_8c.html',1,'']]],
-  ['menu_2ec_4',['menu.c',['../menu_8c.html',1,'']]]
+  ['endgame_6',['endGame',['../menu_8c.html#a5b6889c6d66536c77210cc9a33841e83',1,'menu.c']]]
 ];

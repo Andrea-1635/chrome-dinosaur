@@ -8,10 +8,15 @@
 #include "appearance.h"
 
 /**
-* @mainpage Menu
-* @brief Il menu chiede i dati del giocatore
+* @author Andrea Virga
+* @brief Il menu mostra l'high score e chiede le informazioni del giocatore, successivamente avvia il gioco. 
 * @file menu.c
 * @version 1.0
+*/
+
+/**
+* \fn startMenu
+* @brief Apre il menu utente
 */
 void startMenu() {
 	struct user firstUser;
@@ -41,10 +46,19 @@ void startMenu() {
 	startEngine(highScore, firstUser);
 }
 
+
+/**
+* @fn endGame(int score, int highScore, int diY, int diX, struct user firstUser)
+* @brief La funzione viene richiamata quando finisce il gioco
+* @param score punteggio
+* @param highScore record punteggio 
+* @param diY posizione y
+* @param diX posizione x
+* @param firstUser utente
+*/
 void endGame(int score, int highScore, int diY, int diX, struct user firstUser) {
 	nodelay(stdscr, FALSE);
 	init_pair(2,COLOR_RED,COLOR_BLACK);
-    /// Save
 	if (score > highScore) {
 		highScore = score;
 		FILE *highScoreFile;
@@ -59,7 +73,7 @@ void endGame(int score, int highScore, int diY, int diX, struct user firstUser) 
 	mvprintw(diY-4, diX, "          X-X ");
 	mvprintw(diY, diX, "      ||");
 	char keyToExit = getch();
-    /// Exit or restart
+
 	if (keyToExit == 'r') {
 		attroff(COLOR_PAIR(2));
 		startEngine(highScore, firstUser);

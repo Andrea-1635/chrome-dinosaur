@@ -8,6 +8,22 @@
 #include "appearance.h"
 #include "minunit.h"
 
+/**
+* @author Andrea Virga
+* @brief Il file contiene il motore principale e tutte le funzioni del gioco
+* @file game.c
+* @version 1.0
+*/
+
+/**
+* \fn checkGame(int y, int x, int diY, int diX)
+* @brief Controlla se il gioco e' finito oppure continuera'
+* @param y posizione y
+* @param x posizione x
+* @param diY posizione dinosauro y
+* @param diX posizione dinosauro x
+
+*/
 // Check if the game is going to be finished in this turn of loop
 int checkGame(int y, int x, int diY, int diX) {
 	if (diY == y) {
@@ -17,7 +33,11 @@ int checkGame(int y, int x, int diY, int diX) {
 	}
 	return 1;
 }
-
+/**
+* \fn computeTime(int delayTime)
+* @brief Velocizza il gioco
+* @param delayTime tempo di velocizzamento
+*/
 // Make game faster
 int computeTime(int delayTime) {
 	if (delayTime >= 250000) {
@@ -32,7 +52,12 @@ int computeTime(int delayTime) {
 	return delayTime;
 }
 
-// Which dinosaur should be printed
+/**
+* \fn showdinosaur(int diY, int diX)
+* @brief Mostra il corretto dinosauro
+* @param diY posizione dinosauro y
+* @param diX posizione dinosauro x
+*/
 void showdinosaur(int diY, int diX) {
 	static int counter = 0;
 	if (counter == 0) {
@@ -45,7 +70,12 @@ void showdinosaur(int diY, int diX) {
 	}
 }
 
-// Give user the prize
+/**
+* \fn computePrize(int score, int usedPrize)
+* @brief Da il premio al giocatore
+* @param score punteggio
+* @param usedPrize premio utilizzato
+*/
 int computePrize(int score, int usedPrize) {
 	if (score >= 20 && score <= 40 && usedPrize == 0) {
 		return 1;
@@ -58,7 +88,12 @@ int computePrize(int score, int usedPrize) {
 	}	
 	return 0;
 }
-
+/**
+* \fn startEngine(int highScore, struct user firstUser)
+* @brief Motore principale del gioco
+* @param highScore record punteggio
+* @param firstUser struct contenente i dati del giocatore
+*/
 // The main engine!
 void startEngine(int highScore, struct user firstUser) {
     srand(time(NULL));

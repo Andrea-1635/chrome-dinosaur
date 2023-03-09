@@ -1,4 +1,10 @@
 #include <ncurses.h>
+/**
+* @author Andrea Virga
+* @brief Contiene funzioni che mostrano i vari disegni da mostrare nel gioco
+* @file appearance.c
+* @version 1.0
+*/
 
 void dinosaur1(int y, int x) {
 	mvprintw(y-4, x, "          e-e  ");

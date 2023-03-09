@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['startmenu_11',['startMenu',['../menu_8c.html#adb4b7104b34632fd046d9a534eced233',1,'menu.c']]]
+  ['endgame_22',['endGame',['../menu_8c.html#a5b6889c6d66536c77210cc9a33841e83',1,'menu.c']]]
 ];

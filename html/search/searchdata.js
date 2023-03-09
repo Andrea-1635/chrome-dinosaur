@@ -1,10 +1,10 @@
 var indexSectionsWithContent =
 {
-  0: "cemsu",
+  0: "acegmsu",
   1: "u",
-  2: "m",
-  3: "es",
-  4: "cm"
+  2: "agm",
+  3: "ces",
+  4: "c"
 };
 
 var indexSectionNames =
@@ -18,10 +18,10 @@ var indexSectionNames =
 
 var indexSectionLabels =
 {
-  0: "Tutto",
-  1: "Classi",
-  2: "File",
-  3: "Funzioni",
-  4: "Pagine"
+  0: "All",
+  1: "Data Structures",
+  2: "Files",
+  3: "Functions",
+  4: "Pages"
 };
 
